@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Matrice LED-uri</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .calculator {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .calculator input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 80%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .calculator button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #28a745;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .calculator button:hover {
+            background-color: #218838;
+        }
+        .calculator p {
+            margin: 20px 0 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2>Calculator Matrice LED-uri</h2>
+        <input type="number" id="sideLength" placeholder="Introdu lungimea laturii matricei">
+        <button onclick="calculateLEDs()">Calculează</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function calculateLEDs() {
+            var sideLength = document.getElementById('sideLength').value;
+            if (sideLength > 0) {
+                var numLEDs = sideLength * sideLength;
+                document.getElementById('result').innerText = "Numărul de LED-uri necesare: " + numLEDs;
+            } else {
+                document.getElementById('result').innerText = "Te rog introdu o valoare validă pentru lungimea laturii.";
+            }
+        }
+    </script>
+</body>
+</html>
